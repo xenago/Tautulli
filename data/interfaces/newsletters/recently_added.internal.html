@@ -25,7 +25,7 @@
 <head>
     <meta name="viewport" content="width=device-width"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Tautulli Newsletter - ${subject}</title>
+    <title>Noahflix Newsletter - ${subject}</title>
     <link rel="shortcut icon" href="${base_url_image + 'images/favicon/favicon.ico' if base_url_image else 'https://tautulli.com/images/favicon.ico'}">
     <style>
         /* -------------------------------------
@@ -543,17 +543,17 @@
     <tr>
         <td class="container">
             <div class="content">
-                <span class="preheader">Tautulli Newsletter  - ${subject}</span>
+                <span class="preheader">Noahflix Newsletter  - ${subject}</span>
                 % if base_url and not preview:
                 <div class="view-full">  <!-- IGNORE SAVE -->
-                    <a href="${base_url + uuid}" title="View full newsletter" target="_blank" rel="noreferrer">Click here to view the full newsletter.</a>  <!-- IGNORE SAVE -->
+                    <a href="https://newsletter.noahflix.shazbot.ca/${uuid}" title="View full newsletter" target="_blank" rel="noreferrer">Click here to view the full newsletter.</a>  <!-- IGNORE SAVE -->
                 </div>  <!-- IGNORE SAVE -->
                 % endif
                 <table border="0" cellpadding="3" cellspacing="0" class="main">
                     <tr>
                         <td class="wrapper">
                             <div class="header">
-                                <img src="${base_url_image + 'images/newsletter/newsletter-header.png' if base_url_image else 'https://tautulli.com/images/newsletter/newsletter-header.png'}" class="header-img" width="492" height="90"/>
+                                <img src="https://i.imgur.com/SGAPSVx.png" class="header-img" width="305" height="90" style="max-width: 100%;width: 305px;height: 90px;margin-left: auto;margin-right: auto;"/>
                             </div>
                             <div class="server-name">${parameters['server_name']}</div>
                             <div class="dates">${parameters['start_date']} - ${parameters['end_date']}</div>
