@@ -107,7 +107,7 @@ _CONFIG_DEFINITIONS = {
     'GIT_PATH': (str, 'General', ''),
     'GIT_REMOTE': (str, 'General', 'origin'),
     'GIT_TOKEN': (str, 'General', ''),
-    'GIT_USER': (str, 'General', 'Tautulli'),
+    'GIT_USER': (str, 'General', 'xenago'),
     'GIT_REPO': (str, 'General', 'Tautulli'),
     'GROUP_HISTORY_TABLES': (int, 'General', 1),
     'HISTORY_TABLE_ACTIVITY': (int, 'General', 1),
