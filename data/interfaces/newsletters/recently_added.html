@@ -4,20 +4,22 @@
     from plexpy.helpers import grouper, get_img_service
 
     recently_added = data['recently_added']
-    if plexpy.CONFIG.NEWSLETTER_SELF_HOSTED and plexpy.CONFIG.HTTP_BASE_URL:
-        base_url = plexpy.CONFIG.HTTP_BASE_URL + plexpy.HTTP_ROOT + 'newsletter/'
-    elif preview:
-        base_url = 'newsletter/'
-    else:
-        base_url = ''
-
+#    if plexpy.CONFIG.NEWSLETTER_SELF_HOSTED and plexpy.CONFIG.HTTP_BASE_URL:
+#        base_url = plexpy.CONFIG.HTTP_BASE_URL + plexpy.HTTP_ROOT + 'newsletter/'
+#    elif preview:
+#        base_url = 'newsletter/'
+#    else:
+#        base_url = ''
+    base_url = 'https://newsletter.noahflix.shazbot.ca/'
+   
     service = get_img_service(include_self=True)
-    if service == 'self-hosted' and plexpy.CONFIG.HTTP_BASE_URL:
-        base_url_image = plexpy.CONFIG.HTTP_BASE_URL + plexpy.HTTP_ROOT + 'image/'
-    elif preview and service and service != 'self-hosted':
-        base_url_image = 'image/'
-    else:
-        base_url_image = ''
+ #   if service == 'self-hosted' and plexpy.CONFIG.HTTP_BASE_URL:
+#        base_url_image = plexpy.CONFIG.HTTP_BASE_URL + plexpy.HTTP_ROOT + 'image/'
+##    elif preview and service and service != 'self-hosted':
+#        base_url_image = 'image/'
+#    else:
+#        base_url_image = ''
+    base_url_image = 'https://newsletter.noahflix.shazbot.ca/image/'
 
 %>
 <!doctype html>
@@ -25,7 +27,7 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Tautulli Newsletter - ${subject}</title>
+    <title>Noahflix Newsletter - ${subject}</title>
     <link rel="shortcut icon" href="${base_url_image + 'images/favicon/favicon.ico' if base_url_image else 'https://tautulli.com/images/favicon.ico'}">
     <style>
         /* -------------------------------------
@@ -222,7 +224,8 @@
         .header-img {
             width: 492px;
             height: 90px;
-            margin-left: -35px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .server-name {
             font-size: 30px;
@@ -456,7 +459,8 @@
             table[class=body] .header-img {
                 width: 410px;
                 height: 75px;
-                margin-left: -30px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             table[class=body] h1 {
@@ -543,7 +547,7 @@
     <tr>
         <td class="container" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;vertical-align: top;display: block;max-width: 1042px;padding: 10px;width: 1042px;margin: 0 auto !important;">
             <div class="content" style="box-sizing: border-box;display: block;margin: 0 auto;max-width: 1037px;padding: 10px;">
-                <span class="preheader" style="color: transparent;display: none;height: 0;max-height: 0;max-width: 0;opacity: 0;overflow: hidden;mso-hide: all;visibility: hidden;width: 0;">Tautulli Newsletter  - ${subject}</span>
+                <span class="preheader" style="color: transparent;display: none;height: 0;max-height: 0;max-width: 0;opacity: 0;overflow: hidden;mso-hide: all;visibility: hidden;width: 0;">Noahflix Newsletter  - ${subject}</span>
                 % if base_url and not preview:
                 <div class="view-full" style="clear: both;color: #282A2D;font-size: 12px;margin-bottom: 10px;text-align: center;width: 100%;">  <!-- IGNORE SAVE -->
                     <a href="${base_url + uuid}" title="View full newsletter" target="_blank" rel="noreferrer" style="text-decoration: underline;color: #282A2D;">Click here to view the full newsletter.</a>  <!-- IGNORE SAVE -->
@@ -552,8 +556,8 @@
                 <table border="0" cellpadding="3" cellspacing="0" class="main" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;background: #282A2D;border-radius: 3px;color: #ffffff;">
                     <tr>
                         <td class="wrapper" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;padding: 5px;overflow: auto;">
-                            <div class="header" style="width: 100%;height: 90px;text-align: center;">
-                                <img src="${base_url_image + 'images/newsletter/newsletter-header.png' if base_url_image else 'https://tautulli.com/images/newsletter/newsletter-header.png'}" class="header-img" width="492" height="90" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;width: 492px;height: 90px;margin-left: -35px;">
+                            <div class="header" style="width: 100%;height: 90px;text-align: center;margin-top: 15px;">
+                                <img src="${base_url_image + 'images/newsletter/newsletter-header.png' if base_url_image else 'https://i.imgur.com/SGAPSVx.png'}" class="header-img" width="305" height="90" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;width: 305px;height: 90px;margin-left: auto;margin-right: auto;">
                             </div>
                             <div class="server-name" style="font-size: 30px;text-align: center;">${parameters['server_name']}</div>
                             <div class="dates" style="color: #aaaaaa;font-size: 20px;text-align: center;">${parameters['start_date']} - ${parameters['end_date']}</div>
